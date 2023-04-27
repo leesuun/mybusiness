@@ -16,23 +16,7 @@ if (search.equals("y")) {
 <head>
 <title>우편번호 검색</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript">
-    function loadSearch() {
-	frm = document.zipFrm;
-	if (frm.area3.value == "") {
-	    alert("도로명을 입력하세요.");
-	    frm.area3.focus();
-	    return;
-	}
-	frm.action = "zipSearch.jsp"
-	frm.submit();
-    }
-
-    function sendAdd(zipcode, adds) {
-	opener.document.regFrm.zipcode.value = zipcode;
-	opener.document.regFrm.address.value = adds;
-	self.close();
-    }
+<script type="text/javascript" src="../js/loadSearch.js">
 </script>
 </head>
 <body bgcolor="#FFFFCC">
