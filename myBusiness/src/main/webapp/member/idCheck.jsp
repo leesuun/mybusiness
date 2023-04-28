@@ -7,7 +7,7 @@ boolean result = mMgr.checkId(id);
 %>
 <html>
 <head>
-<title>ID 중복체크</title>
+<title>ID 중복체</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body bgcolor="#FFFFCC">
