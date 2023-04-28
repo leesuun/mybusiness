@@ -1,5 +1,8 @@
 package member;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+
 public class MemberBean {
 
 	private String id;
@@ -12,12 +15,22 @@ public class MemberBean {
 	private String address;
 	private String hobby[];
 	private String job;
+	private String nationality;
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
 
 	public String getId() {
 		return id;
 	}
 
 	public void setId(String id) {
+
 		this.id = id;
 	}
 
@@ -26,7 +39,12 @@ public class MemberBean {
 	}
 
 	public void setPwd(String pwd) {
-		this.pwd = pwd;
+		
+		Encrypt encrypt = new Encrypt();
+		this.pwd=  encrypt.getEncrypt(pwd);
+		/* System.out.println("디스"+this.pwd); */
+		
+		
 	}
 
 	public String getName() {
@@ -91,5 +109,20 @@ public class MemberBean {
 
 	public void setJob(String job) {
 		this.job = job;
+	}
+
+	public String hashPass(String pwd) {
+		String hex = null;
+
+		try {
+			MessageDigest md = MessageDigest.getInstance("SHA-256");
+			md.update((pwd).getBytes());
+			hex = String.format("%064x", new BigInteger(1, md.digest()));
+
+		} catch (Exception e) { // TODO: handle exception }
+
+
+		}
+		return hex;
 	}
 }

@@ -73,10 +73,11 @@ public class MemberMgr {
 		PreparedStatement pstmt = null;
 		String sql = null;
 		boolean flag = false;
+
 		try {
 			con = pool.getConnection();
 			sql = "insert tblMember(id,pwd,name,gender,birthday,email,zipcode"
-					+ ",address,hobby,job)values(?,?,?,?,?,?,?,?,?,?)";
+					+ ",address,hobby,job,nationality)values(?,?,?,?,?,?,?,?,?,?,?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getId());
 			pstmt.setString(2, bean.getPwd());
@@ -97,6 +98,7 @@ public class MemberMgr {
 			}
 			pstmt.setString(9, new String(hb));
 			pstmt.setString(10, bean.getJob());
+			pstmt.setString(11, bean.getNationality());
 			if (pstmt.executeUpdate() == 1)
 				flag = true;
 		} catch (Exception e) {
@@ -163,6 +165,7 @@ public class MemberMgr {
 				}
 				bean.setHobby(hobbys);
 				bean.setJob(rs.getString("job"));
+				bean.setNationality(rs.getString("nationality"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

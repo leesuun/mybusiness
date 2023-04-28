@@ -131,6 +131,13 @@
                 <td>직업을 선택 하세요.</td>
               </tr>
               <tr>
+                <td>국적</td>
+                <td>
+                  <input type="text" name="nationality" size="15">
+                </td>
+                <td>국적을 적어주세요.</td>
+              </tr>
+              <tr>
                 <td colspan="3" align="center">
                   <input type="button" value="회원가입" onclick="inputCheck()">
                   &nbsp; &nbsp;
@@ -141,6 +148,7 @@
                   >
                 </td>
               </tr>
+
             </table>
           </td>
         </tr>

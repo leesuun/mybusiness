@@ -47,14 +47,7 @@ if (id != null) {
         <td><%=loggedInUser.getId()%></td>
         <td><%=loggedInUser.getPwd()%></td>
         <td>
-          <%
-          if (loggedInUser.getGender().equals("1")) {
-          	out.println("<span>" + "남자" + "</span>");
-          } else {
-          	out.println("<span>" + "여자" + "</span>");
-          }
-          %>
-
+          <%="<span>" + (loggedInUser.getGender().equals("1") ? "남자" : "여자") + "</span>"%>
         </td>
         <td><%=loggedInUser.getBirthday()%></td>
         <td><%=loggedInUser.getEmail()%></td>
@@ -68,6 +61,7 @@ if (id != null) {
         <th>집주소</th>
         <th>취미</th>
         <th>직업</th>
+        <th>국적</th>
       </tr>
     </thead>
     <tbody>
@@ -85,6 +79,7 @@ if (id != null) {
           %>
         </td>
         <td><%=loggedInUser.getJob()%></td>
+        <td><%=loggedInUser.getNationality()%></td>
       </tr>
     </tbody>
   </table>
