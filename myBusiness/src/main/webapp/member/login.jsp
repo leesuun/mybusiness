@@ -3,13 +3,18 @@
 <%
 request.setCharacterEncoding("UTF-8");
 String id = (String) session.getAttribute("idKey");
-String name = mMgr.getMember(id).getName();
+String name = null;
+String[] hobbys = null;
+if (id != null) {
+	name = mMgr.getMember(id).getName();
+	hobbys = mMgr.getMember(id).getHobby();
+}
 %>
 <html>
 <head>
 <title>로그인</title>
-<link rel="stylesheet" href="../css/style.css?1" type="text/css">
-<link rel="stylesheet" href="../css/login.css?1" type="text/css" />
+<link rel="stylesheet" href="../css/style.css?3" type="text/css">
+<link rel="stylesheet" href="../css/login.css?5" type="text/css" />
 <script type="text/javascript" src="../js/loginCheck.js"></script>
 </head>
 <body bgcolor="#ffffcc">
@@ -19,7 +24,15 @@ String name = mMgr.getMember(id).getName();
     if (id != null) {
     %>
     <b><%=name%></b>님 환영 합니다.
-    <p>제한된 기능을 사용 할 수가 있습니다.<p />
+    <p />
+    <nav>
+      <ul>
+        <li><a href="loginUserInfo.jsp">개인 정보 조회</a></li>
+        <li><a href="#">우편 정보 조회</a></li>
+        <li><a href="#">개인 정보 조회 </a></li>
+        <li><a href="#">개인 정보 조회 </a></li>
+      </ul>
+    </nav>
     <a href="logout.jsp">로그아웃</a>
     <%
     } else {

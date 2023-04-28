@@ -11,4 +11,16 @@ table{
 	text-align: center;
 }
 
+nav{
+	
+}
 
+nav ul {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+nav ul li{
+	border: 1px solid black;
+	padding:3px;
+}
