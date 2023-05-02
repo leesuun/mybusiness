@@ -5,8 +5,8 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 <link href="../css/member.css" rel="stylesheet" type="text/css">
 
-<script type="text/javascript" src="../js/script.js"></script>
-<script type="text/javascript" src="../js/idCheck.js"></script>
+<script type="text/javascript" src="../js/script.js?1"></script>
+<script type="text/javascript" src="../js/idCheck.js?1"></script>
 </head>
 <body bgcolor="#FFFFCC" onLoad="regFrm.id.focus()">
   <div align="center">
@@ -24,7 +24,7 @@
               <tr>
                 <td width="20%">아이디</td>
                 <td width="50%">
-                  <input name="id" size="15">
+                  <input name="id" value="1" size="15">
                   <input type="button" value="ID중복확인"
                     onClick="idCheck(this.form.id.value)"
                   >
@@ -34,21 +34,21 @@
               <tr>
                 <td>패스워드</td>
                 <td>
-                  <input type="password" name="pwd" size="15">
+                  <input type="password" value="1" name="pwd" size="15">
                 </td>
                 <td>패스워드를 적어주세요.</td>
               </tr>
               <tr>
                 <td>패스워드 확인</td>
                 <td>
-                  <input type="password" name="repwd" size="15">
+                  <input type="password" value="1" name="repwd" size="15">
                 </td>
                 <td>패스워드를 확인합니다.</td>
               </tr>
               <tr>
                 <td>이름</td>
                 <td>
-                  <input name="name" size="15">
+                  <input name="name" value="1" size="15">
                 </td>
                 <td>이름을 적어주세요.</td>
               </tr>
@@ -65,7 +65,7 @@
               <tr>
                 <td>생년월일</td>
                 <td>
-                  <input name="birthday" type="date" size="6" min="2018-01-01"
+                  <input name="birthday" value="2012-12-12" type="date" size="6" min="2018-01-01"
                     max="2018-12-31"
                   >
                 </td>
@@ -74,7 +74,7 @@
               <tr>
                 <td>Email</td>
                 <td>
-                  <input name="email" size="30">
+                  <input name="email" value="12@naver.com" size="30">
                 </td>
                 <td>이메일를 적어 주세요.</td>
               </tr>
@@ -89,7 +89,7 @@
               <tr>
                 <td>주소</td>
                 <td>
-                  <input name="address" size="45">
+                  <input name="address" value="1" size="45">
                 </td>
                 <td>주소를 적어 주세요.</td>
               </tr>
@@ -97,7 +97,7 @@
                 <td>취미</td>
                 <td>
                   인터넷
-                  <input type="checkbox" name="hobby" value="인터넷">
+                  <input type="checkbox" checked="checked" name="hobby" value="인터넷">
                   여행
                   <input type="checkbox" name="hobby" value="여행">
                   게임
@@ -112,20 +112,20 @@
               <tr>
                 <td>직업</td>
                 <td>
-                  <select name=job>
-                    <option value="0" selected>선택하세요.
-                    <option value="회사원">회사원
-                    <option value="연구전문직">연구전문직
-                    <option value="교수학생">교수학생
-                    <option value="일반자영업">일반자영업
-                    <option value="공무원">공무원
-                    <option value="의료인">의료인
-                    <option value="법조인">법조인
-                    <option value="종교,언론,에술인">종교.언론/예술인
-                    <option value="농,축,수산,광업인">농/축/수산/광업인
-                    <option value="주부">주부
-                    <option value="무직">무직
-                    <option value="기타">기타
+                  <select name="jobCode">
+                    <option value="-1" selected>선택하세요.
+                    <option value="0">무직
+                    <option value="1">회사원
+                    <option value="2">연구전문직
+                    <option value="3">교수학생
+                    <option value="4">일반자영업
+                    <option value="5">공무원
+                    <option value="6">의료인
+                    <option value="7">법조인
+                    <option value="8">종교,언론/예술인
+                    <option value="9">농/축/수산/광업인
+                    <option value="a">주부
+                    <option value="b">기타
                   </select>
                 </td>
                 <td>직업을 선택 하세요.</td>
@@ -133,10 +133,11 @@
               <tr>
                 <td>국적</td>
                 <td>
-                  <input type="text" name="nationality" size="15">
+                  <input type="text" value="1" name="nationality" size="15">
                 </td>
                 <td>국적을 적어주세요.</td>
               </tr>
+
               <tr>
                 <td colspan="3" align="center">
                   <input type="button" value="회원가입" onclick="inputCheck()">

@@ -77,7 +77,7 @@ public class MemberMgr {
 		try {
 			con = pool.getConnection();
 			sql = "insert tblMember(id,pwd,name,gender,birthday,email,zipcode"
-					+ ",address,hobby,job,nationality)values(?,?,?,?,?,?,?,?,?,?,?)";
+					+ ",address,hobby,jobcode,nationality)values(?,?,?,?,?,?,?,?,?,?,?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getId());
 			pstmt.setString(2, bean.getPwd());
@@ -97,7 +97,7 @@ public class MemberMgr {
 				}
 			}
 			pstmt.setString(9, new String(hb));
-			pstmt.setString(10, bean.getJob());
+			pstmt.setString(10, bean.getJobCode());
 			pstmt.setString(11, bean.getNationality());
 			if (pstmt.executeUpdate() == 1)
 				flag = true;
@@ -164,8 +164,9 @@ public class MemberMgr {
 					hobbys[i] = hobby.substring(i, i + 1);
 				}
 				bean.setHobby(hobbys);
-				bean.setJob(rs.getString("job"));
+				bean.setJobCode(rs.getString("jobcode"));
 				bean.setNationality(rs.getString("nationality"));
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -203,8 +204,7 @@ public class MemberMgr {
 				}
 			}
 			pstmt.setString(8, new String(hobby));
-			pstmt.setString(9, bean.getJob());
-			pstmt.setString(10, bean.getId());
+			pstmt.setString(9, bean.getId());
 			int count = pstmt.executeUpdate();
 			if (count > 0)
 				flag = true;
@@ -215,4 +215,31 @@ public class MemberMgr {
 		}
 		return flag;
 	}
+
+	public String getJobname(String jobcode) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String jobname = null;
+		try {
+			con = pool.getConnection();
+			String sql = "SELECT jobname FROM tblmember, tbljob WHERE tblmember.jobcode = tbljob.jobcode";
+			pstmt = con.prepareStatement(sql);
+			/* pstmt.setString(1, jobcode); */
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				jobname = rs.getString("jobname");
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con);
+		}
+
+		System.out.println(jobname);
+		return jobname;
+
+	}
+
 }

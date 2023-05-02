@@ -17,9 +17,15 @@ if (id == null) {
 <%
 MemberBean loggedInUser = mMgr.getMember(id);
 String[] hobbys = null;
+String jobname = null;
+
+/* System.out.println(loggedInUser.getJobCode()); */
+
 if (id != null) {
 	hobbys = mMgr.getMember(id).getHobby();
+	jobname = mMgr.getJobname(loggedInUser.getJobCode());	
 }
+
 %>
 <!DOCTYPE html>
 <html>
@@ -78,7 +84,7 @@ if (id != null) {
           }
           %>
         </td>
-        <td><%=loggedInUser.getJob()%></td>
+        <td><%=jobname%></td>
         <td><%=loggedInUser.getNationality()%></td>
       </tr>
     </tbody>

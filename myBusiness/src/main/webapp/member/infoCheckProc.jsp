@@ -1,31 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="member.MemberBean"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <jsp:useBean id="mMgr" class="member.MemberMgr" />
 <jsp:useBean id="encrypt" class="member.Encrypt" />
-
 <%
+request.setCharacterEncoding("UTF-8");
 String id = (String) session.getAttribute("idKey");
-String pass = (String) request.getParameter("pwd");
-MemberBean loggedInUser = mMgr.getMember(id);
-/* System.out.println(loggedInUser.getPwd()); */
-boolean result = mMgr.loginMember(id, encrypt.getEncrypt(pass));
-/* System.out.println(result); */
+String pwd = request.getParameter("pwd");
+String url = "infoCheck.jsp";
+String msg = "로그인에 실패 하였습니다.";
+/* System.out.println(pwd);
+System.out.println(encrypt.getEncrypt(pwd)); */
 
+boolean result = mMgr.loginMember(id, encrypt.getEncrypt(pwd));
 if (result) {
-	/* 회원정보 조회 화면  */
-%>
-<script>
-    location.href = "loginUserInfo.jsp";
-</script>
-<%
-} else {
-/* 정보 조회 불가능  */
-%>
-<script>
-    alert("로그인된 유저의 비밀번호가 아닙니다.")
-    location.href = "infoCheck.jsp";
-    
-</script>
-<%
+  session.setAttribute("idKey", id);
+  url = "loginUserInfo.jsp";
+  msg = "패스워드가 일치합니다.";
 }
 %>
+<script>
+  alert("<%=msg%>");  
+  location.href="<%=url%>";
+</script>
+
+ 

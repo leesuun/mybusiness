@@ -11,16 +11,8 @@ public class MemberBean {
 	private String zipcode;
 	private String address;
 	private String hobby[];
-	private String job;
+	private String jobCode;
 	private String nationality;
-
-	public String getNationality() {
-		return nationality;
-	}
-
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
-	}
 
 	public String getId() {
 		return id;
@@ -98,13 +90,26 @@ public class MemberBean {
 		this.hobby = hobby;
 	}
 
-	public String getJob() {
-		return job;
+	
+	public String getJobCode() {
+		return jobCode;
 	}
 
-	public void setJob(String job) {
-		this.job = job;
+	public void setJobCode(String jobCode) {
+		System.out.println("setter: " + jobCode);
+		this.jobCode = jobCode;
 	}
+	
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+
 
 	/*
 	 * public String hashPass(String pwd) { String hex = null;

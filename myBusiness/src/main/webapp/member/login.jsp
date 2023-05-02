@@ -27,7 +27,7 @@ if (id != null) {
     <p />
     <nav>
       <ul>
-        <li onclick="loginCheck()"><a href="infoCheck.jsp">개인 정보 조회</a></li>
+        <li><a href="infoCheck.jsp"  onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;">개인 정보 조회</a></li>
         <!-- <li><a href="loginUserInfo.jsp">개인 정보 조회</a></li> -->
         <li><a href="#">우편 정보 조회</a></li>
         <li><a href="#">개인 정보 조회 </a></li>

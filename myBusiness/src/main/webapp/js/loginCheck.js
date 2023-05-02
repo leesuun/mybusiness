@@ -14,3 +14,7 @@ function loginCheck() {
 	}
 	document.loginFrm.submit();
 }
+
+function passCheck(){
+	
+}

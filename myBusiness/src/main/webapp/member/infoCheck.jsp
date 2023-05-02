@@ -12,8 +12,7 @@
         <td align="center" colspan="2">
           <h1>개인정보 확인 체크</h1>
         </td>
-      </tr>
- 
+      </tr> 
       <tr>
         <td>비밀번호</td>
         <td>
@@ -24,7 +23,6 @@
         <td >
           <div align="right">
             <input type="submit" value="확인">
-        
           </div>
         </td>
       </tr>
