@@ -1,15 +1,14 @@
 @charset "EUC-KR";
 
-
-body{
-		background-color: #ffffcc;
+body {
+	background-color: #ffffcc;
 }
 
-h2{
+h2 {
 	text-align: center;
 }
 
-hr{
+hr {
 	margin-bottom: 1rem;
 }
 

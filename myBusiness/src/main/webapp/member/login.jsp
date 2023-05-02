@@ -13,8 +13,8 @@ if (id != null) {
 <html>
 <head>
 <title>로그인</title>
-<link rel="stylesheet" href="../css/style.css?3" type="text/css">
-<link rel="stylesheet" href="../css/login.css?5" type="text/css" />
+<link rel="stylesheet" href="../css/style.css?5" type="text/css">
+<link rel="stylesheet" href="../css/login.css?7" type="text/css" />
 <script type="text/javascript" src="../js/loginCheck.js"></script>
 </head>
 <body bgcolor="#ffffcc">
@@ -27,7 +27,8 @@ if (id != null) {
     <p />
     <nav>
       <ul>
-        <li><a href="loginUserInfo.jsp">개인 정보 조회</a></li>
+        <li onclick="loginCheck()"><a href="infoCheck.jsp">개인 정보 조회</a></li>
+        <!-- <li><a href="loginUserInfo.jsp">개인 정보 조회</a></li> -->
         <li><a href="#">우편 정보 조회</a></li>
         <li><a href="#">개인 정보 조회 </a></li>
         <li><a href="#">개인 정보 조회 </a></li>

@@ -2,7 +2,6 @@
 
 form{
 	background-color: #ffffcc;
-	border: 1px solid black;
 	width : 500px;
 	padding: 2rem;
 	
@@ -11,9 +10,6 @@ table{
 	text-align: center;
 }
 
-nav{
-	
-}
 
 nav ul {
 	display: flex;
