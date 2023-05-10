@@ -1,0 +1,143 @@
+
+nav{
+	background-color: gray;
+}
+
+
+nav ul  {
+	display:flex;
+	justify-content: space-around;
+	 padding:10px; 
+}
+
+@keyframes fadeIn {from { opacity:0;
+	
+}
+
+to {
+	opacity: 1;
+}
+
+}
+#bg-img {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	animation: fadeIn 1s linear;
+}
+
+#bg-img img {
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.momentum-app {
+	display: flex;
+	position: relative;
+	height: 100vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.clock {
+	font-size: 6.5rem;
+	text-shadow: 3px 3px black;
+}
+
+#login__form input, .todo-form input {
+	margin-top: 1.5rem;
+	width: 30rem;
+	height: 3rem;
+	background: none;
+	border: none;
+	border-bottom: 2px solid white;
+	padding: 0.2rem;
+	text-align: center;
+	font-size: 2rem;
+	color: white;
+}
+
+#login__form input::placeholder, .todo-form input::placeholder {
+	color: white;
+	opacity: 0.8;
+	font-size: 2rem;
+	text-align: left;
+}
+
+.greeting {
+	font-size: 2.5rem;
+	text-shadow: 2px 2px black;
+}
+
+.greeting-box {
+	display: flex;
+	margin-top: 1rem;
+}
+
+.greeting-box button {
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	color: white;
+	margin-left: 1rem;
+}
+
+.quote {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	bottom: 3rem;
+}
+
+.quote #quotes {
+	font-weight: 600;
+	font-size: 1.2rem;
+	margin-bottom: 0.3rem;
+}
+
+.weather:hover {
+	opacity: 1;
+}
+
+.weather {
+	position: absolute;
+	font-size: 1.5rem;
+	top: 1rem;
+	right: 0.5rem;
+	opacity: 0.7;
+}
+
+.todo-list {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.todo-list li {
+	margin-bottom: 1rem;
+}
+
+.todo-list li span {
+	font-size: 2rem;
+	font-weight: 600;
+	text-shadow: 2px 2px black;
+	color: white;
+}
+
+.todo-list li button {
+	cursor: pointer;
+	background: none;
+	font-size: 1.2rem;
+	border: none;
+}
+
+/*  -------------------------------------javascript------------------------------------- */
+.hidden {
+	display: none;
+}

@@ -1,4 +1,4 @@
-package member;
+package dbCon;
 
 /**
  * Copyright(c) 2001 iSavvix Corporation (http://www.isavvix.com/)
@@ -30,7 +30,6 @@ import java.util.Properties;
 import java.util.Vector;
 
 /**
- * 
  * Manages a java.sql.Connection pool.
  *
  * @author Anil Hemrajani
@@ -38,7 +37,7 @@ import java.util.Vector;
 public class DBConnectionMgr {
 	private Vector connections = new Vector(10);
 	private String _driver = "com.mysql.cj.jdbc.Driver",
-			_url = "jdbc:mysql://127.0.0.1:3306/mybusiness?useUnicode=true&characterEncoding=UTF-8", _user = "root",
+			_url = "jdbc:mysql://127.0.0.1:3306/board?useUnicode=true&characterEncoding=UTF-8", _user = "root",
 			_password = "qkfkadml@12";
 
 	private boolean _traceOn = false;

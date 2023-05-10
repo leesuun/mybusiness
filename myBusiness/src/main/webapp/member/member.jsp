@@ -3,21 +3,23 @@
 <head>
 <title>회원가입</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<link href="../css/member.css" rel="stylesheet" type="text/css">
 
-<script type="text/javascript" src="../js/script.js?1"></script>
-<script type="text/javascript" src="../js/idCheck.js?1"></script>
+
+<script type="text/javascript" src="../js/script.js?3"></script>
+<script type="text/javascript" src="../js/idCheck.js?2"></script>
 </head>
-<body bgcolor="#FFFFCC" onLoad="regFrm.id.focus()">
+<body bgcolor="black" onLoad="regFrm.id.focus()">
+<!-- 상단 메뉴 바 -->
+<jsp:include page="../layout/nav.jsp"></jsp:include>
   <div align="center">
     <br /> <br />
     <form name="regFrm" method="post" action="memberProc.jsp">
       <table cellpadding="5">
         <tr>
-          <td bgcolor="#FFFFCC">
+          <td bgcolor="black">
             <table border="1" cellspacing="0" cellpadding="2" width="600">
               <tr bgcolor="#996600">
-                <td colspan="3">
+                <td colspan="3" style="text-align: center; padding:5px;">
                   <font color="#FFFFFF"><b>회원 가입</b></font>
                 </td>
               </tr>
@@ -53,16 +55,6 @@
                 <td>이름을 적어주세요.</td>
               </tr>
               <tr>
-                <td>성별</td>
-                <td>
-                  남
-                  <input type="radio" name="gender" value="1" checked>
-                  여
-                  <input type="radio" name="gender" value="2">
-                </td>
-                <td>성별을 선택 하세요.</td>
-              </tr>
-              <tr>
                 <td>생년월일</td>
                 <td>
                   <input name="birthday" value="2012-12-12" type="date" size="6" min="2018-01-01"
@@ -77,65 +69,6 @@
                   <input name="email" value="12@naver.com" size="30">
                 </td>
                 <td>이메일를 적어 주세요.</td>
-              </tr>
-              <tr>
-                <td>우편번호</td>
-                <td>
-                  <input name="zipcode" size="5" readonly>
-                  <input type="button" value="우편번호찾기" onClick="zipSearch()">
-                </td>
-                <td>우편번호를 검색하세요.</td>
-              </tr>
-              <tr>
-                <td>주소</td>
-                <td>
-                  <input name="address" value="1" size="45">
-                </td>
-                <td>주소를 적어 주세요.</td>
-              </tr>
-              <tr>
-                <td>취미</td>
-                <td>
-                  인터넷
-                  <input type="checkbox" checked="checked" name="hobby" value="인터넷">
-                  여행
-                  <input type="checkbox" name="hobby" value="여행">
-                  게임
-                  <input type="checkbox" name="hobby" value="게임">
-                  영화
-                  <input type="checkbox" name="hobby" value="영화">
-                  운동
-                  <input type="checkbox" name="hobby" value="운동">
-                </td>
-                <td>취미를 선택 하세요.</td>
-              </tr>
-              <tr>
-                <td>직업</td>
-                <td>
-                  <select name="jobCode">
-                    <option value="-1" selected>선택하세요.
-                    <option value="0">무직
-                    <option value="1">회사원
-                    <option value="2">연구전문직
-                    <option value="3">교수학생
-                    <option value="4">일반자영업
-                    <option value="5">공무원
-                    <option value="6">의료인
-                    <option value="7">법조인
-                    <option value="8">종교,언론/예술인
-                    <option value="9">농/축/수산/광업인
-                    <option value="a">주부
-                    <option value="b">기타
-                  </select>
-                </td>
-                <td>직업을 선택 하세요.</td>
-              </tr>
-              <tr>
-                <td>국적</td>
-                <td>
-                  <input type="text" value="1" name="nationality" size="15">
-                </td>
-                <td>국적을 적어주세요.</td>
               </tr>
 
               <tr>

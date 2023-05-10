@@ -1,3 +1,4 @@
+
 function inputCheck(){
 	if(document.regFrm.id.value==""){
 		alert("아이디를 입력해 주세요.");
@@ -14,12 +15,14 @@ function inputCheck(){
 		document.regFrm.repwd.focus();
 		return;
 	}
+	
 	if(document.regFrm.pwd.value != document.regFrm.repwd.value){
 		alert("비밀번호가 일치하지 않습니다.");
 		document.regFrm.repwd.value="";
 		document.regFrm.repwd.focus();
 		return;
 	}
+	
 	if(document.regFrm.name.value==""){
 		alert("이름을 입력해 주세요.");
 		document.regFrm.name.focus();
@@ -35,6 +38,7 @@ function inputCheck(){
 		document.regFrm.email.focus();
 		return;
 	}
+	alert(document.regFrm.email.value);
     var str=document.regFrm.email.value;	   
     var atPos = str.indexOf('@');
     var atLastPos = str.lastIndexOf('@');
@@ -50,10 +54,6 @@ function inputCheck(){
 	      document.regFrm.email.focus();
 		  return;
     }
-    if(document.regFrm.zipcode.value==""){
-		alert("우편번호를 검색해 주세요.");
-		return;
-	}
 	document.regFrm.submit();
 }
 
